@@ -4,5 +4,13 @@ namespace HairSalon.Models
 {
     public class Client
     {
+        public string Description { get; set; }
+        private static List<Client> _instances = new List<Client> { };
+
+        public Client(string description)
+        {
+            Description = description;
+            _instances.Add(this);
+        }
     }
 }
