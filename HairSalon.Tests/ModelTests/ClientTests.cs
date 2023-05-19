@@ -59,5 +59,21 @@ namespace HairSalon.Tests
             // Assert
             CollectionAssert.AreEqual(newList, result);
         }
+        [TestMethod]
+        public void GetAll_ReturnsClients_ClientList()
+        {
+            //Arrange
+            string description01 = "Ada";
+            string description02 = "Eve";
+            Client newClient1 = new Client(description01);
+            Client newClient2 = new Client(description02);
+            List<Client> newList = new List<Client> { newClient1, newClient2 };
+
+            //Act
+            List<Client> result = Client.GetAll();
+
+            //Assert
+            CollectionAssert.AreEqual(newList, result);
+        }
     }
 }
