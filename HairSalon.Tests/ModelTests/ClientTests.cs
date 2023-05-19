@@ -27,5 +27,21 @@ namespace HairSalon.Tests
             //Assert
             Assert.AreEqual(description, result);
         }
+        [TestMethod]
+        public void SetDescription_SetDescription_String()
+        {
+            //Arrange
+            string description = "Ada";
+            Client newClient = new Client(description);
+
+            //Act
+            string updatedDescription = "Do the dishes";
+            newClient.Description = updatedDescription;
+            string result = newClient.Description;
+
+            //Assert
+            Assert.AreEqual(updatedDescription, result);
+        }
+
     }
 }
