@@ -35,13 +35,24 @@ namespace HairSalon.Tests
             Client newClient = new Client(description);
 
             //Act
-            string updatedDescription = "Do the dishes";
+            string updatedDescription = "Eve";
             newClient.Description = updatedDescription;
             string result = newClient.Description;
 
             //Assert
             Assert.AreEqual(updatedDescription, result);
         }
+        [TestMethod]
+        public void GetAll_ReturnsEmptyList_ClientList()
+        {
+            // Arrange
+            List<Client> newList = new List<Client> { };
 
+            // Act
+            List<Client> result = Client.GetAll();
+
+            // Assert
+            CollectionAssert.AreEqual(newList, result);
+        }
     }
 }
