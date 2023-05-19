@@ -15,7 +15,7 @@ namespace HairSalon.Controllers
         }
 
         [HttpGet("/clients/new")]
-        public ActionResult CreateForm()
+        public ActionResult New()
         {
             return View();
         }
@@ -34,5 +34,11 @@ namespace HairSalon.Controllers
             return View();
         }
 
+        [HttpGet("/clients/{id}")]
+        public ActionResult Show(int id)
+        {
+            Client foundClient = Client.Find(id);
+            return View(foundClient);
+        }
     }
 }
