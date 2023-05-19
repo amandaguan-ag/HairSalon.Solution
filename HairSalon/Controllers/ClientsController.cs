@@ -26,5 +26,13 @@ namespace HairSalon.Controllers
             Client myClient = new Client(description);
             return RedirectToAction("Index");
         }
+
+        [HttpPost("/clients/delete")]
+        public ActionResult DeleteAll()
+        {
+            Client.ClearAll();
+            return View();
+        }
+
     }
 }
