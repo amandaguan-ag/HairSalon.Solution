@@ -6,8 +6,13 @@ using System;
 namespace HairSalon.Tests
 {
     [TestClass]
-    public class ClientTests
+    public class ClientTests : IDisposable
     {
+        public void Dispose()
+        {
+            Client.ClearAll();
+        }
+
         [TestMethod]
         public void ClientConstructor_CreatesInstanceOfClient_Client()
         {
