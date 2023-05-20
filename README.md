@@ -23,19 +23,19 @@ Install the tools that are introduced in [this series of lessons on LearnHowToPr
 
 ### Set up the Databases
 
-Follow the instructions in the LearnHowToProgram.com lesson ["Creating a Test Database: Exporting and Importing Databases with MySQL Workbench"](https://www.learnhowtoprogram.com/lessons/creating-a-test-database-exporting-and-importing-databases-with-mysql-workbench) to use the `todolist_with_ef_core_dump.sql` file located at the top level of this repo to create a new database in MySQL Workbench with the name `to_do_list_with_ef_core`.
+Follow the instructions in the LearnHowToProgram.com lesson ["Creating a Test Database: Exporting and Importing Databases with MySQL Workbench"](https://www.learnhowtoprogram.com/lessons/creating-a-test-database-exporting-and-importing-databases-with-mysql-workbench) to use the `first_last` file located at the top level of this repo to create a new database in MySQL Workbench with the name `first_last`.
 
 ### Set Up and Run Project
 
 1. Clone this repo.
 2. Open the terminal and navigate to this project's production directory called "ToDoList".
 3. Within the production directory "ToDoList", create a new file called `appsettings.json`.
-4. Within `appsettings.json`, put in the following code, replacing the `uid` and `pwd` values with your own username and password for MySQL. For the LearnHowToProgram.com lessons, we always assume the `uid` is `root` and the `pwd` is `epicodus`.
+4. Within `appsettings.json`, put in the following code, replacing the `uid` and `pwd` values with your own username and password for MySQL. 
 
 ```json
 {
   "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=to_do_list_with_ef_core;uid=root;pwd=epicodus;"
+    "DefaultConnection": "Server=localhost;Port=3306;database=[YOUR-DB-NAME];uid=[YOUR-USER-HERE];pwd=[YOUR-PASSWORD-HERE];"
   }
 }
 ```
