@@ -8,6 +8,7 @@ namespace HairSalon.Tests
     [TestClass]
     public class StylistTests : IDisposable
     {
+
         public void Dispose()
         {
             Stylist.ClearAll();
@@ -19,6 +20,7 @@ namespace HairSalon.Tests
             Stylist newStylist = new Stylist("test stylist");
             Assert.AreEqual(typeof(Stylist), newStylist.GetType());
         }
+
         [TestMethod]
         public void GetName_ReturnsName_String()
         {
@@ -32,6 +34,7 @@ namespace HairSalon.Tests
             //Assert
             Assert.AreEqual(name, result);
         }
+
         [TestMethod]
         public void GetId_ReturnsStylistId_Int()
         {
@@ -45,14 +48,48 @@ namespace HairSalon.Tests
             //Assert
             Assert.AreEqual(1, result);
         }
+
+        [TestMethod]
+        public void GetAll_ReturnsAllStylistObjects_StylistList()
+        {
+            //Arrange
+            string name01 = "Cody";
+            string name02 = "Dave";
+            Stylist newStylist1 = new Stylist(name01);
+            Stylist newStylist2 = new Stylist(name02);
+            List<Stylist> newList = new List<Stylist> { newStylist1, newStylist2 };
+
+            //Act
+            List<Stylist> result = Stylist.GetAll();
+
+            //Assert
+            CollectionAssert.AreEqual(newList, result);
+        }
+
+        [TestMethod]
+        public void Find_ReturnsCorrectStylist_Stylist()
+        {
+            //Arrange
+            string name01 = "Code";
+            string name02 = "Dave";
+            Stylist newStylist1 = new Stylist(name01);
+            Stylist newStylist2 = new Stylist(name02);
+
+            //Act
+            Stylist result = Stylist.Find(2);
+
+            //Assert
+            Assert.AreEqual(newStylist2, result);
+        }
+
         [TestMethod]
         public void AddClient_AssociatesClientWithStylist_ClientList()
         {
             //Arrange
-            string description = "Walk the dog.";
+            string description = "Ada";
             Client newClient = new Client(description);
             List<Client> newList = new List<Client> { newClient };
-            string name = "Work";
+            string name = "Cody";
             Stylist newStylist = new Stylist(name);
             newStylist.AddClient(newClient);
 
@@ -62,5 +99,6 @@ namespace HairSalon.Tests
             //Assert
             CollectionAssert.AreEqual(newList, result);
         }
+
     }
 }

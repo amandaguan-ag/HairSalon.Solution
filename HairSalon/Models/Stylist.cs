@@ -16,13 +16,26 @@ namespace HairSalon.Models
             Id = _instances.Count;
             Clients = new List<Client> { };
         }
+
         public static void ClearAll()
         {
             _instances.Clear();
         }
+
+        public static List<Stylist> GetAll()
+        {
+            return _instances;
+        }
+
+        public static Stylist Find(int searchId)
+        {
+            return _instances[searchId - 1];
+        }
+
         public void AddClient(Client client)
         {
             Clients.Add(client);
         }
+
     }
 }
