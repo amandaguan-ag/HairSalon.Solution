@@ -20,5 +20,9 @@ namespace HairSalon.Models
         {
             _instances.Clear();
         }
+        public void AddClient(Client client)
+        {
+            Clients.Add(client);
+        }
     }
 }
