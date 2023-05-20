@@ -45,5 +45,22 @@ namespace HairSalon.Tests
             //Assert
             Assert.AreEqual(1, result);
         }
+        [TestMethod]
+        public void AddClient_AssociatesClientWithStylist_ClientList()
+        {
+            //Arrange
+            string description = "Walk the dog.";
+            Client newClient = new Client(description);
+            List<Client> newList = new List<Client> { newClient };
+            string name = "Work";
+            Stylist newStylist = new Stylist(name);
+            newStylist.AddClient(newClient);
+
+            //Act
+            List<Client> result = newStylist.Clients;
+
+            //Assert
+            CollectionAssert.AreEqual(newList, result);
+        }
     }
 }
