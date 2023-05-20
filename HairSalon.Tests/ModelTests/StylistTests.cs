@@ -6,8 +6,13 @@ using System;
 namespace HairSalon.Tests
 {
     [TestClass]
-    public class StylistTests
+    public class StylistTests : IDisposable
     {
+        public void Dispose()
+        {
+            Stylist.ClearAll();
+        }
+
         [TestMethod]
         public void StylistConstructor_CreatesInstanceOfStylist_Stylist()
         {
@@ -26,6 +31,19 @@ namespace HairSalon.Tests
 
             //Assert
             Assert.AreEqual(name, result);
+        }
+        [TestMethod]
+        public void GetId_ReturnsStylistId_Int()
+        {
+            //Arrange
+            string name = "Test Stylist";
+            Stylist newStylist = new Stylist(name);
+
+            //Act
+            int result = newStylist.Id;
+
+            //Assert
+            Assert.AreEqual(1, result);
         }
     }
 }

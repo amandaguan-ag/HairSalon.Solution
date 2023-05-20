@@ -16,5 +16,9 @@ namespace HairSalon.Models
             Id = _instances.Count;
             Clients = new List<Client> { };
         }
+        public static void ClearAll()
+        {
+            _instances.Clear();
+        }
     }
 }
