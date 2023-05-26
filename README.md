@@ -13,19 +13,19 @@
 * Razer
 * Bootstrap
 
-### Description
+## Description
 
 - This application allows the user to input stylists and clients to the database. For each stylist, the user can add client who see that sylist. The user can also delete stylists and clients from the database.
 
-### Install Tools
+## Install Tools
 
 Install the tools that are introduced in [this series of lessons on LearnHowToProgram.com](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c).
 
-### Set up the Databases
+## Set up the Databases
 
 Follow the instructions in the LearnHowToProgram.com lesson ["Creating a Test Database: Exporting and Importing Databases with MySQL Workbench"](https://www.learnhowtoprogram.com/lessons/creating-a-test-database-exporting-and-importing-databases-with-mysql-workbench) to use the `first_last` file located at the top level of this repo to create a new database in MySQL Workbench with the name `first_last`.
 
-### Set Up and Run Project
+## Set Up and Run Project
 
 1. Clone this repo.
 2. Open the terminal and navigate to this project's production directory called "HairSalon".
@@ -48,7 +48,9 @@ Follow the instructions in the LearnHowToProgram.com lesson ["Creating a Test Da
 
 ## License
 
-_Copyright (c) 2023, Amanda GUan_
+*MIT License*
+
+Copyright (c) 2019 **_Amanda Guan_**
 
 ## Contact Information
 
